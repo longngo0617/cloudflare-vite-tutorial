@@ -5,7 +5,6 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [title, setTitle] = useState("Unknown")
 
   return (
     <>
@@ -28,19 +27,6 @@ function App() {
       </div>
 
       <div className="card">
-        <button
-          onClick={() => {
-            fetch("/api/")
-              .then((res) => res.json() as Promise<{ title: string }>)
-              .then((data) => setTitle(data.title));
-          }}
-          aria-label="get name"
-        >
-          Name from API is: {title}
-        </button>
-        <p>
-          Edit <code>api/index.ts</code> to change the name
-        </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
